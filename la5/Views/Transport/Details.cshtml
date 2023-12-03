@@ -1,0 +1,15 @@
+﻿@using tr.Models.Transport;
+@model TransportModel
+
+<h1>Детали транспорта</h1>
+
+<div>
+    <p>Бренд: @Model.Brand</p>
+    <p>Страна: @Model.Country</p>
+    <p>Дата выпуска: @Model.Date.ToShortDateString()</p>
+    <p>Цена: @Model.Price</p>
+</div>
+
+<p>
+    <a asp-action="Index">Вернутся к транспорту</a>
+</p>

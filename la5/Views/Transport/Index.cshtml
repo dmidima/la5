@@ -1,0 +1,36 @@
+﻿@using tr.Models.Transport;
+@model IEnumerable<TransportModel>
+@{
+    ViewData["Title"] = "Transport Database";
+}
+<h1>Список транспорта</h1>
+<p><a asp-action="Create">Добавить транспорт</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Бренд</th>
+            <th>Страна</th>
+            <th>Дата выпуска</th>
+            <th>Цена</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transport in Model)
+        {
+            <tr>
+                <td>@transport.ID</td>
+                <td>@transport.Brand</td>
+                <td>@transport.Country</td>
+                <td>@transport.Date.ToShortDateString()</td>
+                <td>@transport.Price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@transport.ID">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@transport.ID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@transport.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

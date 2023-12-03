@@ -1,0 +1,18 @@
+﻿@using tr.Models.Transport;
+@model TransportModel
+
+<h1>Удалить транспорт</h1>
+
+<div>
+    <p>Вы уверены, что хотите удалить транспорт:</p>
+    <p>Бренд: @Model.Brand</p>
+    <p>Страна: @Model.Country</p>
+    <p>Дата выпуска: @Model.Date.ToShortDateString()</p>
+    <p>Цена: @Model.Price</p>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Удалить" /> |
+        <a asp-action="Index">Отмена</a>
+    </form>
+</div>
